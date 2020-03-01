@@ -7,12 +7,11 @@
 
 int main(void){
     char buffer[bufferSize];
-    char errorPrint[] = "Couldn't open source file\n";
     int charsRead;
 
     int source = open("testfile.txt", O_RDONLY);
     if (source == -1) {
-        write(1, errorPrint, strlen(errorPrint));
+        printf("Couldn't open source file\n");
         return -1;
     }
 
